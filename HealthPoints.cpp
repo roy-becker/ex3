@@ -16,7 +16,7 @@ HealthPoints::HealthPoints(int n)
     }
     else
     {
-        throw InvalidArgument;
+        throw HealthPoints::InvalidArgument();
     }
 }
 
@@ -28,7 +28,7 @@ HealthPoints& HealthPoints::operator+(const int n)
     return result;
 }
 
-HealthPoints& HealthPoints::operator+(const int x, const HealthPoints& y)
+HealthPoints& operator+(const int x, const HealthPoints& y)
 {
     return y + x;
 }
@@ -52,7 +52,6 @@ void HealthPoints::operator+=(const int n)
     {
         this->m_health = this->m_maxHealth;
     }
-    return this;
 }
 
 void HealthPoints::operator-=(const int n)
@@ -66,7 +65,6 @@ void HealthPoints::operator-=(const int n)
     {
         this->m_health = this->m_maxHealth;
     }
-    return this;
 }
 
 bool HealthPoints::operator==(const HealthPoints& other)
@@ -79,84 +77,84 @@ bool HealthPoints::operator==(const int n)
     return this->m_health == n;
 }
 
-bool HealthPoints::operator==(const int x, const HealthPoints& y)
+bool operator==(const int x, const HealthPoints& y)
 {
     return x == y.m_health;
 }
 
 bool HealthPoints::operator!=(const HealthPoints& other)
 {
-    return this->m_health == other.m_health;
+    return this->m_health != other.m_health;
 }
 
 bool HealthPoints::operator!=(const int n)
 {
-    return this->m_health == n;
+    return this->m_health != n;
 }
 
-bool HealthPoints::operator!=(const int x, const HealthPoints& y)
+bool operator!=(const int x, const HealthPoints& y)
 {
-    return x == y.m_health;
+    return x != y.m_health;
 }
 
 bool HealthPoints::operator<=(const HealthPoints& other)
 {
-    return this->m_health == other.m_health;
+    return this->m_health <= other.m_health;
 }
 
 bool HealthPoints::operator<=(const int n)
 {
-    return this->m_health == n;
+    return this->m_health <= n;
 }
 
-bool HealthPoints::operator<=(const int x, const HealthPoints& y)
+bool operator<=(const int x, const HealthPoints& y)
 {
-    return x == y.m_health;
+    return x <= y.m_health;
 }
 
 bool HealthPoints::operator>=(const HealthPoints& other)
 {
-    return this->m_health == other.m_health;
+    return this->m_health >= other.m_health;
 }
 
 bool HealthPoints::operator>=(const int n)
 {
-    return this->m_health == n;
+    return this->m_health >= n;
 }
 
-bool HealthPoints::operator>=(const int x, const HealthPoints& y)
+bool operator>=(const int x, const HealthPoints& y)
 {
-    return x == y.m_health;
+    return x >= y.m_health;
 }
 
 bool HealthPoints::operator<(const HealthPoints& other)
 {
-    return this->m_health == other.m_health;
+    return this->m_health < other.m_health;
 }
 
 bool HealthPoints::operator<(const int n)
 {
-    return this->m_health == n;
+    return this->m_health < n;
 }
 
-bool HealthPoints::operator<(const int x, const HealthPoints& y)
+bool operator<(const int x, const HealthPoints& y)
 {
-    return x == y.m_health;
+    return x < y.m_health;
 }
 
 bool HealthPoints::operator>(const HealthPoints& other)
 {
-    return this->m_health == other.m_health;
+    return this->m_health > other.m_health;
 }
 
 bool HealthPoints::operator>(const int n)
 {
-    return this->m_health == n;
+    return this->m_health > n;
 }
 
-bool HealthPoints::operator>(const int x, const HealthPoints& y)
+bool operator>(const int x, const HealthPoints& y)
 {
-    return x == y.m_health;
+    return x > y.m_health;
 }
 
 std::ostream& HealthPoints::operator<<(std::ostream& os, const HealthPoints& healthPoints)
