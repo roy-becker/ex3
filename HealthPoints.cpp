@@ -30,8 +30,10 @@ HealthPoints& HealthPoints::operator+(const int n)
 
 HealthPoints& operator+(const int x, const HealthPoints& y)
 {
-    return y + x;
-}
+    HealthPoints* result 
+    *result = new HealthPoints(y);
+    *result += x;
+    return result;
 
 HealthPoints& HealthPoints::operator-(const int n)
 {
@@ -157,7 +159,7 @@ bool operator>(const int x, const HealthPoints& y)
     return x > y.m_health;
 }
 
-std::ostream& HealthPoints::operator<<(std::ostream& os, const HealthPoints& healthPoints)
+std::ostream& operator<<(std::ostream& os, const HealthPoints& healthPoints)
 {
     os << healthPoints.m_health << "(" << healthPoints.m_maxHealth << ")";
     return os;
