@@ -29,17 +29,15 @@ HealthPoints HealthPoints::operator+(const int n)
 
 HealthPoints operator+(const int x, const HealthPoints& y)
 {
-    HealthPoints* result 
-    *result = new HealthPoints(y);
-    *result += x;
+    HealthPoints result = new HealthPoints(y);
+    result += x;
     return result;
 }
 
 HealthPoints HealthPoints::operator-(const int n)
 {
-    HealthPoints* result 
-    *result = new HealthPoints(*this);
-    *result -= n;
+    HealthPoints result = new HealthPoints(*this);
+    result -= n;
     return result;
 }
 
