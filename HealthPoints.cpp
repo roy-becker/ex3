@@ -34,6 +34,7 @@ HealthPoints& operator+(const int x, const HealthPoints& y)
     *result = new HealthPoints(y);
     *result += x;
     return result;
+}
 
 HealthPoints& HealthPoints::operator-(const int n)
 {
