@@ -57,6 +57,6 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const HealthPoints& healthPoints);
 
     class InvalidArgument {};
-}
+};
 
 #endif //EX3_HealthPoints_H
