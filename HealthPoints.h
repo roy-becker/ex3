@@ -20,7 +20,7 @@ public:
 
     HealthPoints(const HealthPoints&) = default;
     ~HealthPoints() = default;
-    HealthPoints& HealthPoints(const HealthPoints& other) = default;
+    HealthPoints& operator=(const HealthPoints& other) = default;
 
     HealthPoints& operator+(const HealthPoints& n);
     friend HealthPoints& operator+(const int x, const HealthPoints& y);
