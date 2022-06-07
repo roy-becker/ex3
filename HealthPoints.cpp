@@ -22,21 +22,24 @@ HealthPoints::HealthPoints(int n)
 
 HealthPoints HealthPoints::operator+(const int n)
 {
-    HealthPoints result = new HealthPoints(*this);
+    HealthPoints result;
+    result = *this;
     result += n;
     return result;
 }
 
 HealthPoints operator+(const int x, const HealthPoints& y)
 {
-    HealthPoints result = new HealthPoints(y);
+    HealthPoints result;
+    result = y;
     result += x;
     return result;
 }
 
 HealthPoints HealthPoints::operator-(const int n)
 {
-    HealthPoints result = new HealthPoints(*this);
+    HealthPoints result;
+    result = *this;
     result -= n;
     return result;
 }
