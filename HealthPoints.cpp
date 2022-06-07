@@ -20,15 +20,14 @@ HealthPoints::HealthPoints(int n)
     }
 }
 
-HealthPoints& HealthPoints::operator+(const int n)
+HealthPoints HealthPoints::operator+(const int n)
 {
-    HealthPoints* result 
-    *result = new HealthPoints(*this);
-    *result += n;
+    HealthPoints result = new HealthPoints(*this);
+    result += n;
     return result;
 }
 
-HealthPoints& operator+(const int x, const HealthPoints& y)
+HealthPoints operator+(const int x, const HealthPoints& y)
 {
     HealthPoints* result 
     *result = new HealthPoints(y);
@@ -36,7 +35,7 @@ HealthPoints& operator+(const int x, const HealthPoints& y)
     return result;
 }
 
-HealthPoints& HealthPoints::operator-(const int n)
+HealthPoints HealthPoints::operator-(const int n)
 {
     HealthPoints* result 
     *result = new HealthPoints(*this);

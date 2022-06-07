@@ -22,10 +22,10 @@ public:
     ~HealthPoints() = default;
     HealthPoints& operator=(const HealthPoints& other) = default;
 
-    HealthPoints& operator+(const int n);
-    friend HealthPoints& operator+(const int x, const HealthPoints& y);
+    HealthPoints operator+(const int n);
+    friend HealthPoints operator+(const int x, const HealthPoints& y);
     
-    HealthPoints& operator-(const int n);
+    HealthPoints operator-(const int n);
     
     void operator+=(const int n);
     void operator-=(const int n);
