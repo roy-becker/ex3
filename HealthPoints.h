@@ -18,7 +18,7 @@ public:
     HealthPoints();
     HealthPoints(const int n);
 
-    HealthPoints(const HealthPoints&) = default;
+    HealthPoints(const HealthPoints& other) = default;
     ~HealthPoints() = default;
     HealthPoints& operator=(const HealthPoints& other) = default;
 
